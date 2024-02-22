@@ -128,7 +128,7 @@ ID дедлайна: <pre><code>${id}</code></pre>`, {
     const ts = DateTime.fromFormat(ctx.args[1] + " " + ctx.args[2], "dd.MM HH:mm", {
       zone: "Europe/Moscow"
     }).toSeconds()
-    const text = ctx.args.slice(2).join(" ")
+    const text = ctx.args.slice(3).join(" ")
 
     deadline.at = ts;
     deadline.text = text
