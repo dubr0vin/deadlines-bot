@@ -139,7 +139,7 @@ ID дедлайна: <pre><code>${id}</code></pre>`, {
   bot.command("deadlines", (ctx) => {
     ctx.reply("Дедлайны:\n" +
       db.data.deadlines.map(deadline => {
-        return `- ${DateTime.fromSeconds(deadline.at).setLocale('ru-RU').toLocaleString(DateTime.DATETIME_FULL)} <b>${deadline.text}</b>`
+        return `- ${DateTime.fromSeconds(deadline.at).setZone("Europe/Moscow").setLocale('ru-RU').toLocaleString(DateTime.DATETIME_FULL)} <b>${deadline.text}</b>`
       }).join("\n"),
       {
         parse_mode: "HTML"
